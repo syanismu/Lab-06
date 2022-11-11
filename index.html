@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/responsive.css">
+        <title>RWD - Responsive Web Design Example</title>
+    </head>
+
+    <body>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </nav>
+
+        <h1>Product Expert Details</h1>
+        
+        <main>
+            <section id="featured">
+                <h2>Featured TV</h2>
+                <h3>The new Sony Bravia 85" 4k HDR TV</h3>
+
+                <div id="feature">
+                    <img src="https://m.media-amazon.com/images/I/61V8SNueZHL._AC_SY355_.jpg" alt='Sony BRAVIA 85" 4K UHD HDR LED Google TV Smart TV (XR85X90K) - 2022 image'>
+                    <p>Bring an incredible cinematic experience home with this powerful 65" Sony BRAVIA smart TV. Equipped with an impressive 4K Ultra HD resolution and colour-enhancing technologies, it renders your viewing experience a lifelike clarity. The Google TV operating system enables quick access to your voice assistant and virtually endless streaming content.</p>
+                </div>
+            </section>
+
+            <section id="inventory">
+                <h2>Inventory</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Display Type</th>
+                            <th>Size (in inches)</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Sony</td>
+                            <td>KD65X75K</td>
+                            <td>4K UHD HDR LED</td>
+                            <td>65</td>
+                            <td class="price">929.99</td>
+                            <td class="quantity">7</td>
+                            <td class="subtotal"></td>
+                        </tr>
+
+                        <tr>
+                            <td>LG</td>
+                            <td>65UQ7590PUB</td>
+                            <td>4K UHD HDR LED</td>
+                            <td>65</td>
+                            <td class="price">799.99</td>
+                            <td class="quantity">5</td>
+                            <td class="subtotal"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Insignia</td>
+                            <td>42F201CA23</td>
+                            <td>1080p LED</td>
+                            <td>42</td>
+                            <td class="price">239.99</td>
+                            <td class="quantity">3</td>
+                            <td class="subtotal"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Panasonic</td>
+                            <td>PN50952-22C</td>
+                            <td>4K UHD HDR LED</td>
+                            <td>50</td>
+                            <td class="price">399.99</td>
+                            <td class="quantity">8</td>
+                            <td class="subtotal"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Samsung</td>
+                            <td>QN65Q60BAFXZC</td>
+                            <td>4K UHD HDR QLED</td>
+                            <td>65</td>
+                            <td class="price">999.99</td>
+                            <td class="quantity">6</td>
+                            <td class="subtotal"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Sony</td>
+                            <td>XB85X90K</td>
+                            <td>4K UHD HDR LED</td>
+                            <td>85</td>
+                            <td class="price">2799.99</td>
+                            <td class="quantity">2</td>
+                            <td class="subtotal"></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th>Total</th>
+                            <td ></td>
+                            <td ></td>
+                            <td ></td>
+                            <td ></td>
+                            <td ></td>
+                            <td id="total">0.00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy;Best Buy Canada Ltd. Suite #102, 425 West 6th Avenue, Vancouver, BC V5Y 1L3</p>
+        </footer>
+
+        <script>
+            const rows = Array.from(document.querySelectorAll("tbody > tr"));
+
+            rows.map(row => {
+                const price = parseFloat(row.querySelector(".price").textContent);
+                const quantity = parseFloat(row.querySelector(".quantity").textContent);
+                const subtotal = row.querySelector(".subtotal");
+                const total = document.querySelector("#total");
+
+                subtotal.textContent = '$' + Math.round(parseFloat(price) * parseInt(quantity), 2);
+                total.textContent = '$' + Math.round(parseFloat(total.textContent.replace('$', '')) + parseFloat(subtotal.textContent.replace('$', '')), 2);
+            });
+        </script>
+    </body>
+</html>

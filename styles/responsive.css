@@ -1,0 +1,140 @@
+@media screen and (max-width: 730px) {
+    #main-nav {
+        position: relative;
+        text-align: center;
+        min-height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #main-nav:before {
+        content: "MENU";
+        display: block;
+        cursor: pointer;
+    }
+
+    #main-nav ul {
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: -9999px;
+        background-color: #ecf0f1;
+    }
+
+    #main-nav:hover ul {
+        top: 60px;
+    }
+
+    #main-nav li a {
+        display: block;
+        background-color: #ecf0f1;
+        width: 100%;
+    }
+
+    #main-nav li a:hover {
+        background-color: #0046be;
+        color: #fff;
+    }
+
+    h1, h2, h3 {
+        padding: 0.5em;
+    }
+
+    h1 {
+        font-size: 2.1em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.4em;;
+    }
+
+    table {
+        margin: 0;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    th:nth-of-type(-n+4):nth-of-type(n+2), 
+    td:nth-of-type(-n+4):nth-of-type(n+2) {
+        display: none;
+    }
+
+    th:nth-of-type(-n+7):nth-of-type(n+5) {
+        text-indent: -9999px;
+        line-height: 0;
+    }
+
+    th:nth-of-type(-n+7):nth-of-type(n+5):after {
+        display: block;
+        text-indent: 0;
+        line-height: inherit;
+    }
+
+    th:nth-of-type(5):after {
+        content: "$";
+    }
+
+    th:nth-of-type(6):after {
+        content: "QTY";
+    }
+
+    th:nth-of-type(7):after {
+        content: "SUB";
+    }
+
+}
+
+@media screen and (min-width: 960px) {
+    #feature img {
+        width: 30%;
+        float: left;
+    }
+
+    #main-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    #main-nav ul {
+        max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    main {
+    flex-direction: row;
+    align-items: flex-start;
+    }
+
+    #inventory {
+        width: 60%;
+        order: 1;
+    }
+
+    #featured {
+        width: 40%;
+        order: 2;
+    }
+
+    #feature img {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    main {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+
+    #feature img {
+        float: left;
+        width: 40%;
+    }
+}
